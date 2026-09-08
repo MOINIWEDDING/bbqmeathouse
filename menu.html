@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FBF8F2">
+<title>Menú — BBQ Meathouse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <!-- ui icons -->
+  <symbol id="ic-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.4"/></symbol>
+  <symbol id="ic-pencil" viewBox="0 0 24 24"><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="ic-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m-9 0 1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/></symbol>
+  <symbol id="ic-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="ic-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol>
+  <symbol id="ic-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.3-4.3"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="ic-chev-l" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="ic-chev-r" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="ic-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></symbol>
+  <symbol id="ic-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="ic-menu" viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h9"/></symbol>
+  <symbol id="ic-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></symbol>
+  <symbol id="ic-upload" viewBox="0 0 24 24"><path d="M12 16V5M8 9l4-4 4 4"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+
+<div class="staff-banner">Modo Comensal / Dueño activo</div>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <div class="logo"><span class="dot"></span>BBQ Meathouse</div>
+    <nav class="links">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="menu.html" class="current">Menú</a>
+      <a href="visitanos.html">Visítanos</a>
+    </nav>
+    <div class="nav-right" id="navAuthArea"></div>
+  </div>
+</header>
+
+<section class="menu-hero">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:0;">
+      <p class="eyebrow">Carta completa</p>
+      <h2>El menú</h2>
+      <p style="margin-top:14px;">Organizado por momento del día — siempre con grano dominicano. El equipo puede añadir o actualizar productos desde aquí.</p>
+    </div>
+  </div>
+</section>
+
+<section class="menu-page-body">
+  <div class="wrap">
+    <div class="section-top" style="margin-bottom:36px;">
+      <h3 style="font-size:22px;">Recomendaciones</h3>
+      <button class="btn btn-amber btn-sm admin-only-btn" id="addProductBtn" style="display:none;"><svg class="icon"><use href="#ic-plus"/></svg>Agregar producto</button>
+    </div>
+    <div id="menuSections"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-bottom" style="border:none; padding-top:0;">
+    <span>© <span id="year"></span> BBQ Meathouse. Todos los derechos reservados.</span>
+    <span><a href="index.html">Volver al inicio</a></span>
+  </div>
+</footer>
+
+<nav class="tabbar">
+  <a href="index.html"><svg><use href="#ic-home"/></svg>Inicio</a>
+  <a href="menu.html" class="current"><svg><use href="#ic-menu"/></svg>Menú</a>
+  <a href="nosotros.html"><svg><use href="#ic-info"/></svg>Nosotros</a>
+  <a href="visitanos.html"><svg><use href="#ic-pin"/></svg>Visítanos</a>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<!-- ================= AUTH MODAL ================= -->
+<div class="overlay" id="authOverlay">
+  <div class="modal">
+    <button class="modal-close" data-close><svg class="icon"><use href="#ic-x"/></svg></button>
+    <div class="modal-top">
+      <p class="eyebrow" id="authEyebrow">Acceso</p>
+      <h3 id="authTitle">Inicia sesión</h3>
+      <p class="modal-sub" id="authSub">Entra como cliente para guardar tus favoritos, o como comensal / dueño para editar el menú.</p>
+      <div class="role-switch">
+        <button type="button" class="active" data-role="cliente">Cliente</button>
+        <button type="button" data-role="staff">Comensal · Dueño</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <form id="authForm">
+        <div class="field" id="fieldName" style="display:none;">
+          <label for="authName">Nombre</label>
+          <input type="text" id="authName" autocomplete="name" placeholder="Tu nombre">
+        </div>
+        <div class="field">
+          <label for="authEmail">Correo</label>
+          <input type="email" id="authEmail" autocomplete="email" inputmode="email" placeholder="tu@correo.com" required>
+        </div>
+        <div class="field">
+          <label for="authPass">Contraseña</label>
+          <input type="password" id="authPass" autocomplete="current-password" placeholder="••••••••" required minlength="6">
+        </div>
+        <div class="form-msg" id="authMsg"></div>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-amber" id="authSubmit">Iniciar sesión</button>
+        </div>
+        <div class="switch-mode">
+          <span id="switchText">¿No tienes cuenta?</span> <button type="button" id="switchBtn">Crear una</button>
+        </div>
+        <div class="demo-hint">El registro crea la cuenta en tu propio proyecto de Supabase. Configura la conexión en <code>js/supabase-client.js</code>.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PRODUCT MODAL ================= -->
+<div class="overlay" id="productOverlay">
+  <div class="modal wide">
+    <button class="modal-close" data-close><svg class="icon"><use href="#ic-x"/></svg></button>
+    <div class="modal-top">
+      <p class="eyebrow">Menú</p>
+      <h3 id="productTitle">Agregar producto</h3>
+    </div>
+    <div class="modal-body">
+      <form id="productForm">
+        <div class="field-row">
+          <div class="field"><label for="pName">Nombre del plato o bebida</label><input type="text" id="pName" required></div>
+          <div class="field"><label for="pPrice">Precio (RD$)</label><input type="number" id="pPrice" min="0" step="1" inputmode="numeric" required></div>
+        </div>
+        <div class="field"><label for="pCat">Recomendación</label>
+          <select id="pCat">
+            <option value="Buenos días">Buenos días</option>
+            <option value="Salados">Salados</option>
+            <option value="Para la tarde">Para la tarde</option>
+            <option value="Experiencias">Experiencias</option>
+          </select>
+        </div>
+        <div class="field"><label for="pImgUp">Foto del producto</label>
+          <div class="uploader">
+            <div class="up-preview"><img alt=""><button type="button" class="up-remove" aria-label="Quitar"><svg class="icon"><use href="#ic-x"/></svg></button></div>
+            <input type="file" accept="image/*" id="pImgUp">
+            <button type="button" class="up-btn"><svg class="icon"><use href="#ic-upload"/></svg>Elegir foto</button>
+            <span class="up-hint">JPG o PNG, hasta 5 MB.</span>
+            <div class="up-bar"><i></i></div>
+            <div class="up-error form-msg error" style="display:none; margin-top:12px;"></div>
+          </div>
+        </div>
+        <div class="field"><label for="pTags">Etiquetas (separadas por coma)</label><input type="text" id="pTags" placeholder="Dominicano, Filtrado, Frutal"></div>
+        <div class="field"><label for="pDesc">Descripción corta</label><textarea id="pDesc" placeholder="Origen del grano, método, notas de sabor…"></textarea></div>
+        <div class="field" style="display:flex; align-items:center; gap:10px; margin-top:18px;">
+          <input type="checkbox" id="pFeatured" style="width:auto;">
+          <label for="pFeatured" style="margin:0; text-transform:none; font-size:13px; letter-spacing:0; font-weight:500; color:var(--ink);">Marcar como favorito</label>
+        </div>
+        <div class="form-msg" id="productMsg"></div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" data-close>Cancelar</button>
+          <button type="submit" class="btn btn-amber" id="productSubmit">Guardar producto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/site.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>
